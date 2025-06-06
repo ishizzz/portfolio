@@ -23,7 +23,7 @@ export default function Container(props) {
   const router = useRouter();
   const meta = {
     title: 'Ishita Chauhan',
-    description: `MSCS Student @ UMass Amherst | ML Developer | Avid Traveler',
+    description: `MSCS Student @ UMass Amherst | ML Developer | Avid Traveler`,
     image: 'https://ishizz.com/static/images/ishita.webp',
     type: 'website',
     ...customMeta
