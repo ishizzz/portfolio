@@ -22,9 +22,9 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Rohit Jacob Mathew',
-    description: `Software Engineer based in India. SDE at Trellix, Auth0 Ambassador & Ex Turtlemint & HackerRank`,
-    image: 'https://rohitjmathew.space/static/images/rohit.webp',
+    title: 'Ishita Chauhan',
+    description: `MSCS Student @ UMass Amherst | ML Developer | Avid Traveler',
+    image: 'https://ishizz.com/static/images/ishita.webp',
     type: 'website',
     ...customMeta
   };
@@ -35,15 +35,15 @@ export default function Container(props) {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://rohitjmathew.space${router.asPath}`} />
-        <link rel="canonical" href={`https://rohitjmathew.space${router.asPath}`} />
+        <meta property="og:url" content={`https://ishizz.com${router.asPath}`} />
+        <link rel="canonical" href={`https://ishizz.com${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Rohit Jacob Mathew" />
+        <meta property="og:site_name" content="Ishita Chauhan" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@iamrohitjmathew" />
+        <meta name="twitter:site" content="@ishizz__" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />

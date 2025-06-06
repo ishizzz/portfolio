@@ -3,7 +3,7 @@ import Container from '@/components/Container';
 export default function BooksLayout({ children }) {
   return (
     <Container
-      title="Bookshelf – Rohit Jacob Mathew"
+      title="Bookshelf – Ishizz"
       description="My ever growing bookshelf which are mostly physical books."
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
@@ -14,8 +14,7 @@ export default function BooksLayout({ children }) {
           My ever growing bookshelf which are mostly physical books as I haven't made the switch to a Kindle yet. 
           Truthfully, I find a different joy in reading a physical book with a glass of chai in my garden. 
           <br/><br/>
-          Other books I have read: <a target="_blank" rel="noreferrer" className="text-blue-700 dark:text-blue-300" href='https://www.goodreads.com/user/show/140566214-rohit-mathew'>GoodReads</a>.
-        </p>
+                  </p>
         <div className="prose dark:prose-dark w-full">{children}</div>
       </article>
     </Container>

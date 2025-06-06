@@ -3,7 +3,7 @@ import Container from '@/components/Container';
 export default function Podcasts({ children }) {
     return (
         <Container
-            title="Podcasts – Rohit Jacob Mathew"
+            title="Podcasts – Ishizz"
             description="All the podcasts I find interesting"
         >
             <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">

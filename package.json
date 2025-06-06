@@ -1,15 +1,15 @@
 {
-  "name": "rohitjmathew.space",
+  "name": "ishizz.com",
   "description": "My personal website.",
   "version": "0.0.0",
   "author": {
-    "name": "Rohit Jacob Mathew",
-    "url": "https://rohitjmathew.space"
+    "name": "Ishita Chauhan",
+    "url": "https://ishizz.com"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rohitjmathew/rohitjmathew.space.git"
+    "url": "git+https://github.com/ishizzz/portfolio.git"
   },
   "scripts": {
     "build": "next build",

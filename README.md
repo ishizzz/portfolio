@@ -1,4 +1,4 @@
-# rohitjmathew.space
+# ishizz.com
 
 My portfolio has transformed over the years - from a static Bootstrap HTML site, to Gatsby, and finally to Next.js/React/MDX. 
 
@@ -9,13 +9,11 @@ Thanks to [Lee Robinson](https://github.com/leerob) for his amazing website bein
 ## Running Locally
 
 ```bash
-$ git clone https://github.com/rohitjmathew/rohitjmathew.space.git
-$ cd rohitjmathew.space
+$ git clone https://github.com/ishizzz/portfolio.git
+$ cd portfolio
 $ yarn
 $ yarn dev
 ```
-
-Create a `.env.local` file similar to [`.env.example`](https://github.com/rohitjmathew/rohitjmathew.space/blob/master/.env.example).
 
 ## Built Using
 

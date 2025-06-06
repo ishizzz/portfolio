@@ -3,7 +3,7 @@ import Container from '@/components/Container';
 export default function Newsletters({ children }) {
     return (
         <Container
-            title="Newsletters – Rohit Jacob Mathew"
+            title="Newsletters – Ishizz"
             description="All the newsletters I find interesting"
         >
             <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">

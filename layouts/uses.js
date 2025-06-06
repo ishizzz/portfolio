@@ -3,7 +3,7 @@ import Container from '@/components/Container';
 export default function UsesLayout({ children }) {
   return (
     <Container
-      title="Uses – Rohit Jacob Mathew"
+      title="Uses – Ishizz"
       description="The tools, services, and techniques I’m using to get things done"
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
