@@ -97,21 +97,15 @@ export default function Container(props) {
           <NextLink href="/projects">
             <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Projects</a>
           </NextLink>
+          <NextLink href="/publications">
+            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Publications</a>
+          </NextLink>
           <NextLink href="/blogs">
             <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Blogs</a>
           </NextLink>
           <NextLink href="/gallery">
             <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Gallery</a>
           </NextLink>
-          {/* <NextLink href="/bookshelf">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Bookshelf</a>
-          </NextLink>
-          <NextLink href="/links">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Links</a>
-          </NextLink>
-          <NextLink href="/uses">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Uses</a>
-          </NextLink> */}
         </div>
       </nav>
       <main
