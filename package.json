@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/ishizzz/portfolio.git"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "build": "next build",
     "dev": "next",
