@@ -5,6 +5,7 @@ import { useTheme } from 'next-themes';
 import NextLink from 'next/link';
 
 import Footer from '@/components/Footer';
+import WalkingCats from '@/components/WalkingCats';
 
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
@@ -48,7 +49,7 @@ export default function Container(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <nav className="flex items-center justify-between w-full max-w-4xl p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav md:my-8 dark:bg-black bg-opacity-60 dark:text-gray-100">
+      <nav className="sticky top-2 md:top-4 z-10 flex items-center justify-between w-full max-w-4xl px-8 py-4 mx-auto my-0 text-gray-900 bg-white/70 dark:bg-black/70 backdrop-blur-lg saturate-150 md:rounded-2xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm dark:text-gray-100">
         <a href="#skip" className="skip-nav">
           Skip to content
         </a>
@@ -88,24 +89,30 @@ export default function Container(props) {
           <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" className="w-8 h-5 text-gray-800 dark:text-gray-200"><path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path></svg>
         </button>
         <div className={(menuOpen ? "visible" : "invisible") + " md:visible absolute md:relative top-20 left-0 md:top-0 z-20 flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto bg-gray-100 dark:bg-gray-800 dark:md:bg-black dark:text-gray-100 shadow-md rounded-md md:rounded-none md:shadow-none md:bg-transparent p-6 pt-3 md:p-0"}>
-          <NextLink href="/">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Home</a>
-          </NextLink>
-          <NextLink href="/about">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">About</a>
-          </NextLink>
-          <NextLink href="/projects">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Projects</a>
-          </NextLink>
-          <NextLink href="/publications">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Publications</a>
-          </NextLink>
-          <NextLink href="/blogs">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Blogs</a>
-          </NextLink>
-          <NextLink href="/gallery">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Gallery</a>
-          </NextLink>
+          {[
+            ['/', 'Home'],
+            ['/about', 'About'],
+            ['/projects', 'Projects'],
+            ['/publications', 'Publications'],
+            ['/blogs', 'Blogs'],
+            ['/gallery', 'Gallery']
+          ].map(([href, label]) => {
+            const active = router.pathname === href;
+            return (
+              <NextLink key={href} href={href}>
+                <a
+                  className={
+                    'px-1 py-1 sm:px-3 transition-colors duration-200 ' +
+                    (active
+                      ? 'text-gray-900 dark:text-gray-100'
+                      : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100')
+                  }
+                >
+                  {label}
+                </a>
+              </NextLink>
+            );
+          })}
         </div>
       </nav>
       <main
@@ -115,6 +122,7 @@ export default function Container(props) {
         {children}
         <Footer />
       </main>
+      <WalkingCats />
     </div>
   );
 }
