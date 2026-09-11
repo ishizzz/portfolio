@@ -49,7 +49,8 @@ export default function Container(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <nav className="sticky top-2 md:top-4 z-10 flex items-center justify-between w-full max-w-4xl px-8 py-4 mx-auto my-0 text-gray-900 bg-white/70 dark:bg-black/70 backdrop-blur-lg saturate-150 md:rounded-2xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm dark:text-gray-100">
+      <div className="sticky top-0 z-10 bg-white dark:bg-black">
+      <nav className="flex items-center justify-between w-full max-w-4xl px-8 py-4 mx-auto my-0 md:my-3 text-gray-900 bg-white dark:bg-black md:rounded-2xl md:border md:border-gray-200 md:dark:border-gray-800 md:shadow-md dark:text-gray-100">
         <a href="#skip" className="skip-nav">
           Skip to content
         </a>
@@ -115,6 +116,7 @@ export default function Container(props) {
           })}
         </div>
       </nav>
+      </div>
       <main
         id="skip"
         className="flex flex-col justify-center px-8 bg-white dark:bg-black"
