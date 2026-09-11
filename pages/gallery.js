@@ -25,18 +25,20 @@ export default function Gallery() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Container title="Gallery | Ishita Chauhan">
-        <div className="flex flex-col justify-center items-start max-w-4xl mx-auto py-12 px-6">
-          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">Gallery</h1>
-          <p className="text-gray-700 dark:text-gray-300 mb-8">
+        <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+            Gallery
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">
             Welcome to my personal photo gallery! Here, I share moments captured during my outdoor adventures, city explorations, and everyday scenes that inspire me. Feel free to browse through these images to get a glimpse of my world through the lens.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
             {galleryImages.map((src, idx) => (
               <div key={idx} className="overflow-hidden rounded-lg">
                 <img
                   src={src}
                   alt={`Gallery image ${idx + 1}`}
-                  className="object-cover w-full h-48 sm:h-56 lg:h-64"
+                  className="object-cover w-full h-40 sm:h-44"
                 />
               </div>
             ))}
