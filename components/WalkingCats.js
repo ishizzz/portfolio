@@ -1,6 +1,9 @@
 // A few tiny cats that stroll along the bottom of the page. Pure SVG + CSS, no
 // image files. Each cat gets its own color, speed, and start delay so they don't
-// march in lockstep. Hidden for anyone who prefers reduced motion.
+// march in lockstep. Click one and it hops with a little speech bubble. Hidden
+// for anyone who prefers reduced motion.
+
+import { useState } from 'react';
 
 const cats = [
   { color: '#f472b6', duration: 26, delay: 0, scale: 1 },
@@ -9,10 +12,11 @@ const cats = [
   { color: '#34d399', duration: 38, delay: -24, scale: 0.9 }
 ];
 
-function Cat({ color, scale }) {
+const boops = ['meow!', 'hi!', 'purr', '♥', 'boop'];
+
+function CatSvg({ color, scale }) {
   return (
     <svg
-      className="cat-svg"
       width={40 * scale}
       height={28 * scale}
       viewBox="0 0 40 28"
@@ -46,18 +50,36 @@ function Cat({ color, scale }) {
 }
 
 export default function WalkingCats() {
+  const [msgs, setMsgs] = useState({});
+
+  const boop = (i) => {
+    const msg = boops[Math.floor(Math.random() * boops.length)];
+    setMsgs((prev) => ({ ...prev, [i]: msg }));
+    setTimeout(() => {
+      setMsgs((prev) => {
+        const next = { ...prev };
+        delete next[i];
+        return next;
+      });
+    }, 1100);
+  };
+
   return (
     <div className="cats-layer" aria-hidden="true">
       {cats.map((cat, i) => (
         <div
           key={i}
-          className="cat"
+          className={'cat' + (msgs[i] ? ' boop' : '')}
           style={{
             animationDuration: `${cat.duration}s`,
             animationDelay: `${cat.delay}s`
           }}
+          onClick={() => boop(i)}
         >
-          <Cat color={cat.color} scale={cat.scale} />
+          {msgs[i] && <span className="cat-bubble">{msgs[i]}</span>}
+          <div className="cat-inner">
+            <CatSvg color={cat.color} scale={cat.scale} />
+          </div>
         </div>
       ))}
 
@@ -70,12 +92,13 @@ export default function WalkingCats() {
           height: 30px;
           pointer-events: none;
           z-index: 5;
-          overflow: hidden;
         }
         .cat {
           position: absolute;
           bottom: 2px;
           left: -60px;
+          pointer-events: auto;
+          cursor: pointer;
           animation-name: walk;
           animation-timing-function: linear;
           animation-iteration-count: infinite;
@@ -86,6 +109,63 @@ export default function WalkingCats() {
           }
           to {
             transform: translateX(calc(100vw + 80px));
+          }
+        }
+        .cat-inner {
+          transform-origin: bottom center;
+        }
+        .cat.boop .cat-inner {
+          animation: hop 0.5s ease;
+        }
+        @keyframes hop {
+          0% {
+            transform: translateY(0) scale(1);
+          }
+          30% {
+            transform: translateY(-12px) scale(1.05);
+          }
+          60% {
+            transform: translateY(0) scale(1);
+          }
+          80% {
+            transform: translateY(-4px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        .cat-bubble {
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: 4px;
+          white-space: nowrap;
+          font-size: 11px;
+          font-weight: 600;
+          color: #111827;
+          background: #ffffff;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 9999px;
+          padding: 2px 8px;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+          animation: pop 1.1s ease forwards;
+        }
+        @keyframes pop {
+          0% {
+            opacity: 0;
+            transform: translate(-50%, 4px) scale(0.8);
+          }
+          20% {
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1);
+          }
+          80% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: translate(-50%, -6px) scale(1);
           }
         }
         .cat :global(.cat-leg) {
