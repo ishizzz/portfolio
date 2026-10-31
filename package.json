@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "@vercel/analytics": "^2.0.1",
     "autoprefixer": "^10.4.4",
     "gray-matter": "4.0.3",
     "mdx-prism": "0.3.4",
