@@ -12,7 +12,7 @@
     "url": "git+https://github.com/ishizzz/portfolio.git"
   },
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "scripts": {
     "build": "next build",
